@@ -22,7 +22,6 @@ class Msp430Gcc < Formula
     # which, upon further inspection, arises when xgcc bails out when it sees
     # this argument.
     ENV.delete('CFLAGS')
-    ENV.remove_from_cflags "-Qunused-arguments"
     ENV.remove_from_cflags(/ ?-march=\S*/)
     ENV.remove_from_cflags(/ ?-msse[\d\.]*/)
     ENV.remove_from_cflags(/ ?-mmacosx-version-min=10\.\d+/)
