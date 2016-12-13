@@ -21,6 +21,7 @@ class Msp430Gcc < Formula
     # configure: error: cannot compute suffix of object files: cannot compile
     # which, upon further inspection, arises when xgcc bails out when it sees
     # this argument.
+    ENV.delete('CFLAGS')
     ENV.remove_from_cflags "-Qunused-arguments"
     ENV.remove_from_cflags(/ ?-march=\S*/)
     ENV.remove_from_cflags(/ ?-msse[\d\.]*/)
